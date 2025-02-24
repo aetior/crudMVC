@@ -18,7 +18,18 @@ if(isset($_GET['views'])){
 <?php require_once "./app/views/inc/head.php";?>
 </head>
 <body>
-<?php require_once "./app/views/inc/script.php";?>
+<?php 
+use app\controllers\viewsController;
+$viewsController= new viewsController();
+$vista=$viewsController->obtenerVistasControllador($url[0]);
+if($vista =="login"||$vista=="404"){
+    require_once "./app/views/content/".$vista."-view.php";
+}else{
+    require_once $vista;
+
+}
+require_once "./app/views/inc/script.php";
+?>
 
 
 </body>
