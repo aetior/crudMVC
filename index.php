@@ -25,6 +25,7 @@ $vista=$viewsController->obtenerVistasControllador($url[0]);
 if($vista =="login"||$vista=="404"){
     require_once "./app/views/content/".$vista."-view.php";
 }else{
+    require_once "./app/views/inc/navbar.php";
     require_once $vista;
 
 }
@@ -33,4 +34,5 @@ require_once "./app/views/inc/script.php";
 
 
 </body>
+
 </html>
